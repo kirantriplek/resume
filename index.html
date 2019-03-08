@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kiran - Web Developer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="slider.css">
+    <style>
+    a{text-decoration: none;}
+    #tablet-view{display: none;}
+    a:hover{text-decoration: none;}
+    li{list-style-type: none;}
+    h1{text-transform: uppercase;padding: 20px;text-align: center;color: white;}
+    p{text-align: justify;padding: 30px;}
+    hr{padding:  2px;}
+    .edu span{text-align: center;}
+    .mynav{transition:10s ease;position: absolute;top: 50%;left: 100px;transform: translate(-50%,-50%);}
+    .mynav ul{padding: 10px;text-align: center;}
+    .mynav ul li{padding: 20px;background: whitesmoke;}
+    .mynav ul li a{color: gray}
+    .mynav ul li a .fa{font-size: 30px;margin: 2px;}
+    .fixed-box{background: lightgray;height: 100vh;background-image: url('./img/sparks.jpg');background-size: cover;}
+    .fixed-box img{width: 150px;height: 150px;border-radius: 50%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);overflow: hidden;}
+    .scroll-box{background: #333;height: 100vh;overflow-y: scroll;padding: 30px;color: white;text-align: justify;transition: 10s;scroll-behavior: smooth ;}
+    .aboutme{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;}
+    .personalinfo{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;overflow: hidden;}
+    .education{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;padding: 30px;}
+    .education .edu {padding: 30px 0;background: rgb(95, 91, 91);border-radius: 10px;}
+    .workexperience{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;padding: 30px;}
+    .workexperience .edu{padding: 30px 0;background: rgb(95, 91, 91);border-radius: 10px;}
+    .skills{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;overflow: hidden;color: black;}
+    .myskills{padding: 30px;}
+    .myskills {padding: 5px;background: white;text-align: center;border-radius: 5px;margin: 10px;}
+    .myskills .wordpress{width: 80%;background: gray;border-radius: 5px;padding: 5px;animation: 3s flow infinite;}
+    .myskills .html{width: 80%;background: gray;border-radius: 5px;padding: 5px;animation: 3s flow infinite;}
+    .myskills .css{width: 80%;background: gray;border-radius: 5px;padding: 5px;animation: 3s flow infinite;}
+    .myskills .js{width: 50%;background: gray;border-radius: 5px;padding: 5px;animation: 3s flow50 infinite;}
+    .myskills .ps{width: 40%;background: gray;border-radius: 5px;padding: 5px;animation: 3s flow40 infinite;}
+    .myslide{padding-bottom: 30px;}
+    .portfolio{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;}
+    .reachme{margin: 20px;background: rgb(66, 65, 65);border-radius: 10px;}
+    .logo-slider{border: solid 4px #999;padding: 10px;}
+    .logo-slider .logo{ height: 40px;width: 100%;text-align: center;}
+    .logo img{height: 100%;} 
+    .mobile-nav{text-align: right;}
+    .mobile-nav .fa{font-size: 40px;color: white;padding: 20px;cursor: pointer;}
+    .mobilenav{float: center;background: white;display: none;transition: 5s ease;animation: rightflow 2s ease 1;scroll-behavior: smooth;margin: 0 30px;}
+    .mobilenav ul li{border-bottom: 1px solid gray;text-align: center;padding: 10px 0;}
+    .mobilenav ul li i{font-size: 20px;color: gray;scroll-behavior: smooth;}
+
+   @keyframes flow{
+       0%{width:30%;opacity: 0;}
+       100%{width: 80%;opacity: 1;}
+   }
+   @keyframes flow50{
+       0%{width:30%;opacity: 0;}
+       100%{width: 50%;opacity: 1;}
+   }
+   @keyframes flow40{
+       0%{width:30%;opacity: 0;}
+       100%{width: 40%;opacity: 1;}
+   }
+   @keyframes rightflow{
+       0%{transform: translateX(500px)}
+       100%{transform: translateX(0)}
+   }
+    
+    @media (max-width:991px){
+    *{font-size: 15px;}
+        h1{font-size: 21px;}
+        h3{font-size: 18px;}
+        .mynav ul li a .fa{font-size: 18px;}
+        .fixed-box img{width: 100px;height: 100px;border-radius: 100px;}
+        .edu{width: 100%;}
+    }
+    @media (max-width:786px){    
+        #desktop{display: none;}
+        #tablet-view{display: block;}
+        body{background: #333;}
+        p,li{color: white;display: block;}
+        li{padding: 10px;}
+        .mobile{padding: 10px;background: rgb(95, 91, 91);border-radius: 10px;margin: 30px;}
+        .myskills{color: black;}
+        .mobile img{width: 100px;height: 100px ;border-radius:50%;}
+        .aboutme i,.aboutme span{color: white;font-size: 18px;}
+    }
+    @media (max-width:480px){
+        .aboutme i,.aboutme span,p,li{font-size: 14px;padding: 10px;}
+        h1{font-size: 20px;padding: 10px;}
+        .mobile{margin: 10px;padding: 5px;}
+    }
+    </style>
+</head>
+<body>
+    <!--Desktop Starts-->
+    <div class="container-fluid" id="desktop">
+        <div class="row no-gutters">
+            <div class=".col-lg-6  col-md-6 col-sm-12 col-xs-12">
+                <div class="fixed-box">
+                    <div class="mynav">
+                        <ul>
+                            <li><a href="#aboutme"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                            <li><a href="#personalinfo"><i class="fa fa-info" aria-hidden="true"></i></a></li>
+                            <li><a href="#education"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
+                            <li><a href="#workexperience"><i class="fa fa-suitcase" aria-hidden="true"></i></a></li>
+                            <li><a href="#skills"><i class="fa fa-list-alt" aria-hidden="true"></i></a></li>
+                            <li><a href="#my-portfolio"><i class="fa fa-folder-open" aria-hidden="true"></i></a></li>
+                            <li><a href="#reachme"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <img src="./img/kiran.jpeg" alt="Kiran Kumar K">
+                </div>
+            </div>
+            
+            <div class=".col-lg-6  col-md-6 col-sm-12 col-xs-12">
+                <div class="scroll-box">
+                        <div class="aboutme" id="aboutme">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1><i class="fa fa-user" aria-hidden="true"></i> about me</h1>
+                                    <hr>
+                                    <p>Hello, I’m Kiran Kumar K, an Web Developer professional based in Bangalore.Seeking a responsible career in an organization where I can utilize my skills, knowledge to work at my level best. To grow with the organization and deliver best possible services. Work hard to achieve the corporate targets and goals keeping in view the corporate mission and vision.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personalinfo" id="personalinfo">
+                            <div class="col-lg-12">
+                                <h1><i class="fa fa-info" aria-hidden="true"></i> PERSONAL INFO</h1>
+                                <hr>
+                            </div>
+                            <div class="row no-gutters text-center">
+                                <div class="col-lg-12 ">
+                                    <ul style="padding:30px;line-height:2;">
+                                        <li> Kiran Kumar K</li>
+                                        <li> kiran06021990@gmail.com</li>
+                                        <li>+91 9844231023</li>
+                                        <li> Web Developer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education" id="education">
+                            <div class="col-lg-12">
+                                <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i> EDUCATION</h1>
+                                <div class="edu text-center">
+                                    <h3>BE IN ECE</h3>
+                                    <span class="text-center">YDIT<br> Bangalore</span> 
+                                </div>
+                                <hr>
+                                <div class="edu text-center">
+                                    <h3>DIPLOMO IN ECE</h3>
+                                    <span class="text-center">I R Plytechnic<br> Bangalore</span> 
+                                </div>
+                                <hr>
+                                <div class="edu text-center">
+                                    <h3>SSLC</h3>
+                                    <span class="text-center">St. John’s, <br>Bellary</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workexperience" id="workexperience">
+                            <div class="col-lg-12">
+                                <h1><i class="fa fa-briefcase" aria-hidden="true"></i> WORK EXPERIENCE</h1>
+                                <div class="edu text-center">
+                                    <h3>BHEL</h3>
+                                    <span>Jan 2017 To Feb 2018</span> <br>
+                                    <span><b>Designation: </b>Apperntship</span>
+                                </div>
+                                <hr>
+                                <div class="edu text-center">
+                                    <h3>Likhith Creative Lens</h3>
+                                    <span>Jan 2017 To Feb 2018</span> <br>
+                                    <span><b>Designation: </b>Wordpress Designer</span>
+                                </div>
+                                <hr>
+                                <div class="edu text-center">
+                                    <h3>Essence Healthcare</h3>
+                                    <span>Feb 2018 To May 2018</span> <br>
+                                    <span><b>Designation: </b>Web Devloper Internship</span>
+                                </div>
+                                <hr>
+                                <div class="edu text-center">
+                                    <h3>DiggDigital</h3>
+                                    <span>August 2018 To Present</span> <br>
+                                    <span><b>Designation: </b>Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills left" id="skills">
+                            <div class="col-lg-12">
+                                <h1>Skills</h1>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-lg-12">
+                                    <div class="myskills">Wordpress 80%
+                                        <div class="wordpress"></div>
+                                    </div>
+                                    <div class="myskills">HTML 80%
+                                        <div class="html"></div>
+                                    </div>
+                                    <div class="myskills">CSS 80%
+                                        <div class="css"></div>
+                                    </div>
+                                    <div class="myskills">Javascript 50%
+                                        <div class="js"></div>
+                                    </div>
+                                    <div class="myskills">Photoshop 40%
+                                        <div class="ps"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="portfolio" id="portfolio">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1>Port Folio</h1>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <img src="./portfolio/essence.cafe.jpg" alt="Msc In Germany">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <img src="./portfolio/nammurutv.jpg" alt="Msc In Germany">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <img src="./portfolio/mscingermany.jpg" alt="Msc In Germany">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <img src="./portfolio/varasidhi.jpg" alt="Msc In Germany">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!---->
+                        <div class="container portfolio" id="my-portfolio">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1 class="text-center">My Portfolio</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="myslide">
+                                           <a href=""><img src="./Port/baapx.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/baapl.jpg" class="slide" style="width:100%;"></a>  
+                                           <a href=""><img src="./Port/baapk.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/bjparvind.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/brandraga.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/david.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/eliteaqua.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/essence.cafe.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/inlingua.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/itvendors.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/mediaextern.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/mscingermany.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/nammurutv.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/nextgen.jpg" class="slide" style="width:100%;"></a> 
+                                           <a href=""><img src="./Port/pm2am.jpg" class="slide" style="width:100%;"></a>
+                                           <a href=""><img src="./Port/rnetwork.jpg" class="slide" style="width:100%;"></a>  
+                                           <a href=""><img src="./Port/varasidhi.jpg" class="slide" style="width:100%;"></a> 
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        <!---->
+                        <div class="reachme" id="reachme">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1>Reach Me</h1>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5118230521443!2d77.48742591430462!3d13.003045517706925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3c6122a4c553%3A0x1e47ae91371775e!2sNemmadhi+Vishranthi+Dhama!5e0!3m2!1sen!2sin!4v1546089318551" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>    
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Desktop Ends-->
+    <!--Tablet And Mobile Devices-->
+    
+    <div class="container-fluid" id="tablet-view">
+        <div class="row" id="kiran">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-objectives mobile text-center aboutme">
+                    <h1>Kiran Kumar K</h1>
+                    <i class="fa fa-mobile" aria-hidden="true"></i> <span> +91 9844231023 </span>&nbsp;&nbsp;&nbsp;<br>
+                    <i class="fa fa-envelope" aria-hidden="true"></i> <span> kiran06021990@gmail.com</span>
+                    <hr>
+                    <img src="./img/kiran.jpeg" alt="Kiran Kumar K">
+
+                </div>
+            </div>
+        </div>
+        <div class="row" id="objectives">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-objectives mobile">
+                    <h1>OBJECTIVE </h1>
+                    <hr>
+                    <p>Seeking a responsible career in an organization where I can utilize my skills, knowledge to work at my level best. To grow with the organization and deliver best possible services. Work hard to achieve the corporate targets and goals keeping in view the corporate mission and vision.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="experience">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-experience mobile">
+                    <h1>WORKING EXPERIENCE</h1>
+                    <hr>
+                    <ul>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Worked as Apprentice trainee BHEL for 10 Months</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Worked as Web Developer in Likhith Creative Lens from January 2017 to February 2018.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Worked as Web developer internship in Essence Healthcare from February 2018 to May 2018.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Working as Web developer  in Diggdigital from August 2018 to present.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="synopsis">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-synopsis mobile">
+                    <h1>PROFESSIONAL SYNOPSIS</h1>
+                    <hr>
+                    <ul>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> 2.3 Year of experience in developing web-based application in WORDPRESS Technology.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Skilled in client side we technologies like HTML, CSS & JavaScript.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Skilled in database designing with MYSQL.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Having good exposure to work on Windows Environment.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Sound Technical knowledge, excellent exposure and ability to learn any tool quickly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="skills">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-skills mobile" >
+                    <h1>IT SKILLS</h1>
+                    <hr>
+                    <ul>
+                        <li><div class="myskills"> Wordpress 80%<div class="wordpress"></div></div></li>
+                        <li><div class="myskills"> HTML 80%<div class="html"></div></li>
+                        <li><div class="myskills"> CSS 80%<div class="css"></div></div></li>
+                        <li><div class="myskills"> Javascript 50%<div class="js"></div></div></li>
+                        <li><div class="myskills"> Photoshop 40%<div class="ps"></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="qualification">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-qualification mobile">
+                    <h1>ACADEMIC QUALIFICATIONS</h1>
+                    <hr>
+                    <ul>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> BE in ECE  at YDIT,  Bengaluru.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Diploma in ECE at IR Polytechnic, Bengaluru.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> SSLC at St. John’s, Bellary.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="personalinfo">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-personalinfo mobile">
+                    <h1>PERSONAL DETAILS</h1>
+                    <hr>
+                    <ul>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Name			:	Kiran Kumar K.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Father Name		:	Dhanappa K.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Gender			:	Male.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Languages Known	:	Kannada, English & Telugu.</li>
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> Address	: Vidyamanyanagar, Andhrahalli, Bangalore-560091.</li>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Mobile Ends-->
+    <!--Mobile Nav-->
+    
+    <!--Mobile Nav Ends-->
+
+    <script>
+    var myindex = 0;
+    myslider()
+    function myslider(){
+        var i;
+        var x = document.getElementsByClassName('slide');
+        for(i = 0; i < x.length; i++){
+            x[i].style.display = "none";
+
+        }
+        myindex++;
+    if (myindex > x.length) {myindex = 1}    
+    x[myindex-1].style.display = "block";  
+    setTimeout(myslider, 3000)
+    }
+    </script>
+
+
+</body>
+</html>
